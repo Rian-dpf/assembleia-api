@@ -29,6 +29,23 @@ export class Pauta {
 
         return statusPauta.NAO_INICIADA;
     }
+
+    public isFoiIniciada(): boolean {
+        return this.isInStatus(statusPauta.INICIADA);
+    }
+
+    public isFoiEncerrada(): boolean {
+        return this.isInStatus(statusPauta.ENCERRADA);
+    }
+
+    public isPossivelIniciarSessao(): boolean {
+        return this.isInStatus(statusPauta.NAO_INICIADA);
+    }
+
+    public isInStatus(statusVerificar: statusPauta): boolean {
+        const status = this.obterStatus();
+        return status == statusVerificar;
+    }
 }
 
 enum statusPauta {
