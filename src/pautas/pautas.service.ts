@@ -10,7 +10,7 @@ export class PautasService {
 
     constructor(@Inject('PAUTA_REPOSITORY') private readonly pautaRepository: Repository<Pauta>){}
 
-    async save(pauta: Pauta): Promise<Result<Pauta>> {
+    async save(pauta: Pauta): Promise<Result<Pauta, Error>> {
         const descricao = pauta.descricao;
 
         const possivelPauta = await this.pautaRepository.findOne({
