@@ -6,7 +6,7 @@ export const databaseProviders: Provider[] = [{
     useFactory: async () => {
        const dataSource = new DataSource({
         type: 'mysql',
-        host: 'localhost',
+        host: 'assembleia-mysql',
         port: 3306,
         username: 'root',
         password: 'root',
